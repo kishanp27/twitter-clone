@@ -1,6 +1,14 @@
+import Layout from '@/components/Layout'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Modal from '@/components/modals/Modal'
+import LoginModal from '@/components/modals/_LoginModal';
+import RegisterModal from '@/components/modals/_RegisterModal';
+import { Toaster } from 'react-hot-toast';
+import Provider from '@/context/AuthContext'
+import EditModal from '@/components/modals/_EditModal'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +24,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <Modal isOpen actionLabel='Submit' title='Title'/> */}
+         <Provider>
+          <Toaster />
+          <LoginModal />
+          <RegisterModal />
+          <EditModal />
+          
+          <Layout>
+            {children}
+            
+          </Layout>
+         </Provider>
+      </body>
     </html>
   )
 }
