@@ -38,7 +38,7 @@ const page = () => {
         placeholder='Tweet your reply'
 
       />
-      <CommentFeed comments={fetchedComments.comments}/>
+      <CommentFeed comments={fetchedComments?.comments}/>
     </>
   )
 }

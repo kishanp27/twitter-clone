@@ -37,7 +37,7 @@ export async function GET(request: Request) {
 
         return NextResponse.json({ posts }, { status: 200 })
     } catch(error) {
-        console.log(error);
+        console.log('hi');
         return NextResponse.json({error: 'error'}, { status: 400 })
     }
 }

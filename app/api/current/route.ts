@@ -8,7 +8,6 @@ export async function GET(){
 
     try {
         const currentUser = await serverAuth();
-        // if(!currentUser) throw new Error('No current user')
         return res.json(currentUser, { status: 200 });
     } catch (error) {
         console.log(error);
